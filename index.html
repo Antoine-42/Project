@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Antoine Graëff</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Boîte de dialogue pour la bienvenue -->
+    <div id="welcome-overlay" class="overlay">
+        <div id="popup-content" class="popup-content">
+            <h2>Bienvenue sur le CV d'Antoine Graeff</h2>
+            <button id="close-dialog">Entrer</button>
+        </div>
+    </div>
+
+    <!-- Contenu principal du CV -->
+    <div class="container mt-5" id="cv-content">
+        <header class="profile-header">
+            <h1>Antoine Graeff</h1>
+            <h2>Alternant chez JL-SYSTEMS</h2>
+            <p>Email: Test@test.com | Téléphone: 01 02 02 01 01 | Adresse: France</p>
+        </header>
+
+        <!-- Section Compétences et Savoir-faire -->
+        <section class="mb-5">
+            <h2 class="text-primary collapsible" id="skills-title">
+                <i class="fas fa-tools"></i> Compétences et Savoir-faire
+            </h2>
+            <div class="skills-content" id="skills-content">
+                <ul class="list-unstyled">
+                    <li>✅ Personne motivée et disciplinée</li>
+                    <li>✅ Éprouve de la joie à aider les autres</li>
+                    <li>✅ Rigoureux</li>
+                    <li>✅ Esprit d'équipe</li>
+                    <li>✅ Permis B (Véhicule à disposition)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Section Expériences Professionnelles -->
+        <section class="mb-5">
+            <h2 class="text-primary collapsible" id="experiences-title">
+                <i class="fas fa-briefcase"></i> Expériences Professionnelles
+            </h2>
+            <div class="timeline" id="experiences-content">
+                <div class="timeline-item">
+                    <h3>Contrat étudiant à la pharmacie Neyret Fauriel</h3>
+                    <p><strong>Septembre 2022 - Juin 2024</strong></p>
+                    <p>Gestion du stock de médicaments et livraison auprès des EHPAD et des particuliers.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Manutentionnaire non qualifié</h3>
+                    <p><strong>Mission intérim chez Mobidecor</strong> - 4 mars 2024 - Juillet 2024</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Opérateur de production</h3>
+                    <p><strong>Mission intérim chez Cochonou</strong> - 19 février 2024 - 23 février 2024</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Préparation de coffret de macarons</h3>
+                    <p><strong>Mission intérim chez Franck Deville</strong> - 12 juin 2023 - 16 juin 2023</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Stage d'observation -->
+        <section class="mb-5">
+            <h2 class="text-primary collapsible" id="observation-title">
+                <i class="fas fa-eye"></i> Stage d'Observation
+            </h2>
+            <div class="observation-content" id="observation-content">
+                <div class="mb-3">
+                    <h3>Stage dans un cabinet dentaire</h3>
+                    <p><strong>Cabinet du docteur PEYRAVERNEY, Saint-Étienne</strong> - 1 semaine</p>
+                    <p>Observation des pratiques et de la gestion d'un cabinet dentaire.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Formation -->
+        <section class="mb-5">
+            <h2 class="text-primary collapsible" id="formation-title">
+                <i class="fas fa-graduation-cap"></i> Formation
+            </h2>
+            <div class="formation-content" id="formation-content">
+                <div class="mb-3">
+                    <h3> BTS CIEL</h3>
+                    <p><strong>Irup</strong> - Septembre 2024 à ce jour</p>
+                    <h3>Licence STAPS</h3>
+                    <p><strong>Université Jean Monnet, Saint-Étienne</strong> - 2022-2024</p>
+                    <h3>Baccalauréat Général</h3>
+                    <p><strong>Lycée François Mauriac, Andrézieux-Bouthéon</strong> - Diplômé en 2022</p>
+                    <p>Spécialité Physique-Chimie et Sciences de la Vie et de la Terre.</p>
+                </div>
+                <div class="mb-3">
+                    <h3>Diplôme national du Brevet</h3>
+                    <p><strong>Collège Antoine Guichard, Veauche</strong> - Diplômé en 2019, Mention 'Bien'</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Intérêts et Loisirs -->
+        <section class="mb-5">
+            <h2 class="text-primary collapsible" id="interests-title">
+                <i class="fas fa-heart"></i> Intérêts et Loisirs
+            </h2>
+            <div class="interests-content" id="interests-content">
+                <ul class="list-unstyled">
+                    <li>📱 Nouvelles technologies</li>
+                    <li>⚽ Sport</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="text-center">
+            <p>&copy; 2024 Antoine Graëff</p>
+        </footer>
+    </div>
+
+    <!-- Lien vers le script JavaScript pour la pop-up -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
