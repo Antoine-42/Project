@@ -1,0 +1,216 @@
+/* Styles de base pour le corps de la page */
+body {
+    background-color: #666869 !important; /* Fond avec légère opacité */
+    font-family: Arial, sans-serif; /* Police de base */
+    color: #100f0f; /* Couleur du texte */
+}
+
+#cv-content {
+    display: none; /* Masque le contenu du CV au départ */
+    background-color: #666869; /* Fond gris clair */
+    color: #333; /* Couleur du texte pour le contenu */
+    padding: 20px; /* Espace intérieur autour du texte */
+}
+
+/* Styles pour l'intro et la pop-up de bienvenue */
+.overlay {
+    position: fixed; /* Fixe la position par rapport à la fenêtre */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #666869; /* Fond gris clair */
+    display: flex; /* Centrage du contenu */
+    align-items: center;
+    justify-content: center;
+    z-index: 1000; /* Priorité d'affichage au-dessus des autres éléments */
+    animation: fadeIn 0.5s ease-out; /* Animation de fondu */
+}
+
+.popup-content {
+    background: #535456; /* Fond sombre pour la pop-up */
+    padding: 20px; /* Espace intérieur */
+    border-radius: 8px; /* Coins arrondis */
+    text-align: center; /* Centre le texte */
+    color: #f7f7f7; /* Couleur claire pour le texte */
+    box-shadow: 0 2px 10px rgba(246, 245, 246, 0.5); /* Ombre douce */
+    transform: scale(0); /* Taille initiale réduite pour animation */
+    animation: popupIn 0.9s forwards; /* Animation de zoom pour afficher */
+}
+/* Bouton "Entrer" dans la pop-up */
+#close-dialog {
+    background-color: #292a2b; /* Couleur violette */
+    border: none; /* Pas de bordure */
+    padding: 10px 20px; /* Espace intérieur */
+    color: #fff; /* Texte blanc */
+    border-radius: 5px; /* Coins arrondis */
+    cursor: pointer; /* Affiche le curseur pointer */
+    transition: background-color 0.3s ease; /* Animation douce au changement de couleur */
+}
+.hidden {
+    animation: popupOut 1.1s forwards; /* Animation pour masquer la pop-up */
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% { opacity: 0; } /* Départ transparent */
+    100% { opacity: 1; } /* Devient opaque */
+}
+
+@keyframes popupIn {
+    to { transform: scale(1); } /* Agrandit jusqu'à sa taille normale */
+}
+
+@keyframes popupOut {
+    to { transform: scale(0); opacity: 0; } /* Rétrécit et disparaît */
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); } /* Monte légèrement */
+    100% { transform: translateY(0px); } /* Redescend */
+}
+
+@keyframes shadowMove {
+    0% { box-shadow: 0 6px 12px rgba(41, 128, 185, 0.2); }
+    50% { box-shadow: 0 10px 20px rgba(41, 128, 185, 0.4); }
+    100% { box-shadow: 0 6px 12px rgba(41, 128, 185, 0.2); }
+}
+
+
+
+/* Styles pour les sections du CV */
+header, section, footer {
+    background: #d6d8da; /* Fond gris */
+    padding: 20px; /* Espace intérieur */
+    border-radius: 8px; /* Coins arrondis */
+    margin-bottom: 20px; /* Espace entre les sections */
+    box-shadow: 0 2px 5px rgb(255, 253, 253); /* Ombre légère */
+}
+
+#close-dialog:hover {
+    background-color: #00000032; /* Couleur plus claire au survol */
+}
+
+/* Styles pour la timeline (Expériences) */
+.timeline {
+    position: relative; /* Nécessaire pour les éléments absolus */
+    margin-left: 20px; /* Décalage par rapport au bord */
+    border-left: 2px solid #070707; /* Ligne verticale bleue */
+    padding-left: 20px; /* Espace intérieur à gauche */
+}
+
+.timeline-item {
+    margin-bottom: 20px; /* Espace entre les items */
+    position: relative; /* Pour positionner les points de la timeline */
+    padding-left: 20px; /* Décalage par rapport à la ligne */
+}
+
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -10px; /* Positionne à gauche de la ligne */
+    top: 5px;
+    width: 12px;
+    height: 12px;
+    background-color: #7c8083; /* Met en valeur les dates */
+    ; /* Couleur bleue des points */
+    border-radius: 50%; /* Forme ronde */
+}
+
+.timeline-item h3 {
+    margin-bottom: 5px; /* Espace sous le titre */
+    color: #333;
+    font-size: 1.2em; /* Taille du texte */
+}
+
+.timeline-item p {
+    margin: 0; /* Supprime les marges */
+    color: #555; /* Couleur du texte */
+}
+
+.timeline-item strong {
+    color: #7c8083; /* Met en valeur les dates */
+}
+
+/* Animation de défilement pour les sections */
+#experiences-content, #skills-content, #observation-content, #formation-content, #interests-content {
+    max-height: 0; /* Initialement caché */
+    overflow: hidden; /* Masque le contenu débordant */
+    transition: max-height 0.9s ease-out; /* Animation de hauteur */
+}
+
+/* Gestion des sections cliquables (collapsibles) */
+.collapsible {
+    cursor: pointer; /* Affiche le pointeur main */
+    transition: color 0.3s ease; /* Transition de couleur sur le hover */
+}
+.collapsible:hover {
+    color: #218838; /* Change la couleur au survol */
+}
+
+.collapsible.active + #experiences-content,
+.collapsible.active + #skills-content,
+.collapsible.active + #observation-content,
+.collapsible.active + #formation-content,
+.collapsible.active + #interests-content {
+    max-height: 1000px; /* Affiche le contenu */
+}
+
+/* Style pour la section de profil */
+.profile-header {
+    background: linear-gradient(135deg, #d6d8da, #a5a7a8); /* Dégradé léger pour le fond */
+    padding: 25px; /* Espace intérieur */
+    border-radius: 15px; /* Coins arrondis */
+    text-align: center; /* Centrage du texte */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Ombre douce */
+    margin-bottom: 20px; /* Espace en bas */
+    animation: fadeIn 1.5s ease-out, float 4s ease-in-out infinite, shadowMove 6s ease-in-out infinite; /* Animations */
+    transition: transform 0.3s ease, box-shadow 0.5s ease; /* Transition pour le zoom et l'ombre */
+}
+
+.profile-header:hover {
+    transform: scale(1.05); /* Zoom à 105% */
+    box-shadow: 0 6px 20px rgba(41, 128, 185, 0.6); /* Ombre plus prononcée au survol */
+}
+.collapsible {
+    color: #000000 !important; /* Remplace par la couleur de ton choix */
+}
+
+.collapsible:hover {
+    color: #000000 !important; /* Couleur légèrement différente pour le survol */
+}
+#popup-content {
+    background: #474848;
+    padding: 20px;
+    border-radius: 10px;
+    color: #ecf0f1;
+    position: absolute; /* Nécessaire pour le mouvement */
+    top: 50px; /* Position de départ */
+    left: 50px; /* Position de départ */
+    transition: transform 0.1s;
+}
+body {
+    background: linear-gradient(90deg, #252626, #7c7d7e, #bbbbbb);
+    background-size: 300% 300%;
+    animation: gradientMove 5s ease infinite;
+    margin: 0;
+    padding: 0;
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+#cv-content {
+    background: transparent; /* Laisse passer le fond du body */
+    padding: 20px; /* Ajoute un peu de padding pour éviter que le contenu ne colle aux bords */
+}
